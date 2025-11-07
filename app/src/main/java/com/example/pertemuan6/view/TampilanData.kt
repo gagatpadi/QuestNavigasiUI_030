@@ -2,7 +2,10 @@ package com.example.pertemuan6.view
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Scaffold
@@ -53,7 +56,12 @@ fun TampilData(
                         fontSize = 22.sp
                     )
                 }
-
+                HorizontalDivider(modifier = Modifier.height(height = 10.dp))
+                Button(
+                    modifier = Modifier.fillMaxWidth(),
+                    onClick = onBackBtnClick){
+                    Text(text = stringResource(id = R.string.back))
+                }
             }
         }
 
