@@ -14,6 +14,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
 import com.example.pertemuan6.R
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -36,7 +39,13 @@ fun TampilData(
         Column(modifier = Modifier.padding(isiRuang),
             verticalArrangement = Arrangement.SpaceBetween) {
             Column(modifier = Modifier.padding(dimensionResource(id = R.dimen.padding_small))) {
+                items.forEach { item ->
+                    Column {
+                        Text(text = item.first.uppercase(), fontSize = 16.sp)
+                        Text(text = item.second, fontWeight = FontWeight.Bold, fontFamily = FontFamily.Cursive, fontSize = 22.sp)
+                    }
 
+                }
             }
         }
     }
